@@ -5,6 +5,8 @@ import titulos from "../booksobj";
 import Bookdetail from "./Bookdetail";
 import AddBook from "./AddBook";
 import Grid from "@material-ui/core/Grid";
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 const useStyles = makeStyles((theme) => ({
   estante: {
@@ -17,12 +19,23 @@ const useStyles = makeStyles((theme) => ({
 function Library() {
   const classes = useStyles();
 
+  const [books, setBooks] = useState(titulos)
   const [book, setBook] = useState({});
   const [clicked, setClicked] = useState(false);
+
+  const [openAdd, setOpenAdd] = useState(false);
 
   function openBook(titulo) {
     setClicked(true);
     setBook(titulo);
+  }
+
+  function sendBook(newBook) {
+    setBooks((preValue) => ([
+      ...preValue,
+      newBook
+    ]));
+    setOpenAdd(false);
   }
 
   return (
@@ -31,10 +44,10 @@ function Library() {
         <Grid xs={12} sm={4}>
           <div
             className={classes.estante}
-            style={{ width: `${titulos.length * 31}px` }}
+            style={{ width: `${books.length * 31}px` }}
           >
             <h2>Estante</h2>
-            {titulos.map((titulo, index) => (
+            {books.map((titulo, index) => (
               <Book
                 key={titulo.id}
                 openBook={openBook}
@@ -46,11 +59,18 @@ function Library() {
         </Grid>
         {clicked && (
           <Grid xs={12} sm={4}>
+            {console.log(books)}
             <Bookdetail closeBook={() => setClicked(false)} book={book} />
           </Grid>
         )}
         <Grid xs={12} sm={4}>
-          <AddBook />
+          { !openAdd && (
+            <Fab onClick={() => setOpenAdd(true)} color="secondary" aria-label="add">
+              <AddIcon />
+            </Fab>
+          )}
+          { openAdd && ( <AddBook sendBook={sendBook} /> )}
+          
         </Grid>
       </Grid>
     </div>
