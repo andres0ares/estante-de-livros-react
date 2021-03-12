@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: "40px",
     padding: "40px 0",
-    backgroundColor: "white",
-    backgroundImage: 'url("https://www.transparenttextures.com/patterns/always-grey.png")'
+    backgroundColor: "#eeeeee"
+    //backgroundImage: 'url("https://www.transparenttextures.com/patterns/always-grey.png")'
   },
   estante: {
     position: "relative", 
