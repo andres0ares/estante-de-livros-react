@@ -5,3 +5,7 @@ font-family: 'Bebas Neue', cursive;
 font-family: 'Dancing Script', cursive;
 font-family: 'Indie Flower', cursive;
 */
+
+html, body {
+    background-color: #1d3557;
+}

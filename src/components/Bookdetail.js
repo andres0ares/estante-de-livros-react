@@ -18,11 +18,12 @@ import Rating from "@material-ui/lab/Rating";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 300
+    maxWidth: "70%",
+    margin: "auto 15%"
   },
   media: {
     height: "auto",
-    width: "237px",
+    width: "90%",
     margin: "0 auto",
     paddingTop: "100%" // 16:9
   },
@@ -58,15 +59,15 @@ export default function RecipeReviewCard(props) {
           </IconButton>
         }
         title={props.book.title}
-        subheader="September 14, 2016"
+        subheader={props.book.author}
       />
       <CardMedia
         className={classes.media}
         image={props.book.img}
-        title="Paella dish"
+        title={`${props.book.title} cover`}
       />
       <CardContent>
-        <Rating name="read-only" value={props.book.rating} readOnly />
+        <Rating name="read-only" value={Number(props.book.rating)} readOnly />
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
@@ -88,19 +89,13 @@ export default function RecipeReviewCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Description</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-            set aside for 10 minutes.
-          </Typography>
           <Typography paragraph>Comments</Typography>
           <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and
-            peppers, and cook without stirring, until most of the liquid is
-            absorbed, 15 to 18 minutes. Reduce heat to medium-low, add reserved
-            shrimp and mussels, tucking them down into the rice, and cook again
-            without stirring, until mussels have opened and rice is just tender,
-            5 to 7 minutes more. (Discard any mussels that don’t open.)
+            {props.book.comment}
+          </Typography>
+          <Typography paragraph>Description</Typography>
+          <Typography paragraph>
+            {props.book.description}
           </Typography>
         </CardContent>
       </Collapse>

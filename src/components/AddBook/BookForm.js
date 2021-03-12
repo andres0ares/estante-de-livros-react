@@ -1,0 +1,121 @@
+import React from 'react';
+import TextField from "@material-ui/core/TextField";
+import Rating from '@material-ui/lab/Rating';
+import Button from '@material-ui/core/Button';
+import SaveIcon from '@material-ui/icons/Save';
+import CloseIcon from "@material-ui/icons/Close";
+import preStyle from "../preStyle";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      maxWidth: "400px",
+      float: "left"
+    },
+    close: {
+      display: "absolute",
+      top: "10px", 
+      left: "10px"
+    },
+    input: {
+      width: "80%",
+      margin: "5px auto 5px auto"
+    },
+    button: {
+      width: '100px',
+      margin: '20px 15px 20px 15px'
+    }
+}));
+
+
+export default function BookForm(props) {
+    const indexHeights = Math.floor(Math.random() * 6);
+    const indexColor = Math.floor(Math.random() * 7);
+    const index = Math.floor(Math.random() * 4);
+
+    const { fonts, heights, textures, colors, fontColors } = preStyle;
+
+    const classes = useStyles();
+
+    const [newBook, setNewBook ] = React.useState({
+        id: 0,
+        title: '',
+        author: '',
+        img: '',
+        comment: '',
+        description: '',
+        rating: '3', 
+        color: colors[indexColor],
+        colorFont: fontColors[indexColor],
+        font: `"${fonts[index]}", cursive`,
+        heigth: heights[indexHeights],
+        texture: `url(${textures[index]})`
+    });
+
+    
+    function handleChange(event) {
+
+        const {name, value} = event.target;
+            
+        setNewBook((preValue) => ({
+        ...preValue,
+        [name]: value
+        }));
+        
+    }
+    return (
+        <form noValidate autoComplete="off">
+        <TextField onChange={handleChange} name="title" value={newBook.title}  className={classes.input} id="outlined-basic" label="Título" variant="outlined" />
+        <TextField onChange={handleChange} name="author" value={newBook.author} className={classes.input} id="outlined-basic" label="Autor" variant="outlined" />
+        <Rating
+          onChange={handleChange}
+          name="rating"
+          value={Number(newBook.rating)}
+        />
+        <TextField name="img" onChange={handleChange} value={newBook.img} className={classes.input} id="outlined-basic" label="Image Link" variant="outlined" />
+        <TextField 
+          onChange={handleChange}
+          name="comment" 
+          value={newBook.comment}
+          className={classes.input}
+          id="outlined-multiline-static"
+          label="Comentário"
+          multiline
+          rows={4}
+          variant="outlined"
+        />
+        <TextField 
+          onChange={handleChange}
+          name="description" 
+          value={newBook.description}
+          className={classes.input}
+          id="outlined-multiline-static"
+          label="Descrição"
+          multiline
+          rows={4}
+          variant="outlined"
+        />
+        <Button
+        onClick={() => props.sendBook(newBook)}
+        variant="contained"
+        color="primary"
+        size="small"
+        className={classes.button}
+        startIcon={<SaveIcon />}
+        >
+        Save
+        </Button>
+        <Button
+        onClick={() => (props.close(false))}
+        variant="outlined"
+        color="secondary"
+        size="small"
+        className={classes.button}
+        startIcon={<CloseIcon />}
+        >
+        Cancel
+        </Button>
+
+      </form>
+    );
+}

@@ -3,24 +3,15 @@ import preStyle from "./preStyle";
 import { makeStyles } from "@material-ui/core/styles";
 
 function Book(props) {
-  const color = props.book.fontColor;
-  const backgroundColor = props.book.color;
-
-  const indexHeights = Math.floor(Math.random() * 6);
-  const indexColor = Math.floor(Math.random() * 7);
-  const index = Math.floor(Math.random() * 4);
-
-  const { fonts, heights, textures, colors, fontColors } = preStyle;
 
   const useStyles = makeStyles((theme) => ({
     bookSpine: {
-      color: color === "" ? fontColors[indexColor] : color,
-      backgroundColor:
-        backgroundColor === "" ? colors[indexColor] : backgroundColor,
-      height: heights[indexHeights],
-      marginLeft: `${props.index * 31}px`,
-      fontFamily: `"${fonts[index]}", cursive`,
-      backgroundImage: `url(${textures[index]})`,
+      color: props.book.colorFont,
+      backgroundColor: props.book.color,
+      height: props.book.heigth,
+      marginLeft: `${props.book.id * 31}px`,
+      fontFamily: props.book.font,
+      backgroundImage: props.book.texture,
       cursor: "pointer",
       boxShadow: "2px 2px 4px #000000",
       position: "absolute",
