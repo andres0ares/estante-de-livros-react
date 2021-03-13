@@ -1,7 +1,7 @@
-const titulos = [
+export const titulos = [
   {
     author: "George R. R. Martin",
-    color: "#293241",
+    color: "#1a237e",
     colorFont: "white",
     comment: "Master pieace.",
     description: "Discription example...",
@@ -15,7 +15,7 @@ const titulos = [
   },
   {
     author: "Ta-Nehisi Coates",
-    color: "#293241",
+    color: "#3949ab",
     colorFont: "white",
     comment: "Amazing book.",
     description: "Between the World and Me is a 2015 nonfiction book written by American author Ta-Nehisi Coates and published by Spiegel & Grau. It is written as a letter to the author's teenage son about the feelings, symbolism...",
@@ -29,7 +29,7 @@ const titulos = [
   },
   {
     author: "Yuval Noah Harari",
-    color: "#ee6c4d",
+    color: "#7986cb",
     colorFont: "black",
     comment: "A fascinating journey to discover more about our past and about ourselves.",
     description: "Sapiens: A Brief History of Humankind is a book by Yuval Noah Harari, first published in Hebrew in Israel in 2011 based on a series of lectures Harari taught...",
@@ -43,7 +43,7 @@ const titulos = [
   },
   {
     author: "Dan Brown",
-    color: "#98c1d9",
+    color: "#9fa8da",
     colorFont: "black",
     comment: "More of the same.",
     description: "Inferno is a 2013 mystery thriller novel by American author Dan Brown and the fourth book in his Robert Langdon series, following Angels & Demons...",
@@ -57,7 +57,7 @@ const titulos = [
   },
   {
     author: "George R. R. Martin",
-    color: "#293241",
+    color: "#1a237e",
     colorFont: "white",
     comment: "Master pieace.",
     description: "Discription example...",
@@ -71,7 +71,7 @@ const titulos = [
   },
   {
     author: "Ta-Nehisi Coates",
-    color: "#293241",
+    color: "#3949ab",
     colorFont: "white",
     comment: "Amazing book.",
     description: "Between the World and Me is a 2015 nonfiction book written by American author Ta-Nehisi Coates and published by Spiegel & Grau. It is written as a letter to the author's teenage son about the feelings, symbolism...",
@@ -85,7 +85,7 @@ const titulos = [
   },
   {
     author: "Yuval Noah Harari",
-    color: "#ee6c4d",
+    color: "#7986cb",
     colorFont: "black",
     comment: "A fascinating journey to discover more about our past and about ourselves.",
     description: "Sapiens: A Brief History of Humankind is a book by Yuval Noah Harari, first published in Hebrew in Israel in 2011 based on a series of lectures Harari taught...",
@@ -99,7 +99,7 @@ const titulos = [
   },
   {
     author: "Dan Brown",
-    color: "#98c1d9",
+    color: "#9fa8da",
     colorFont: "black",
     comment: "More of the same.",
     description: "Inferno is a 2013 mystery thriller novel by American author Dan Brown and the fourth book in his Robert Langdon series, following Angels & Demons...",
@@ -113,7 +113,7 @@ const titulos = [
   },
   {
     author: "Ta-Nehisi Coates",
-    color: "#293241",
+    color: "#3949ab",
     colorFont: "white",
     comment: "Amazing book.",
     description: "Between the World and Me is a 2015 nonfiction book written by American author Ta-Nehisi Coates and published by Spiegel & Grau. It is written as a letter to the author's teenage son about the feelings, symbolism...",
@@ -124,10 +124,10 @@ const titulos = [
     rating: "5",
     texture: "url(https://www.transparenttextures.com/patterns/dark-exa.png)",
     title: "Between the World and Me",
-  },
+  }, 
   {
     author: "Yuval Noah Harari",
-    color: "#ee6c4d",
+    color: "#7986cb",
     colorFont: "black",
     comment: "A fascinating journey to discover more about our past and about ourselves.",
     description: "Sapiens: A Brief History of Humankind is a book by Yuval Noah Harari, first published in Hebrew in Israel in 2011 based on a series of lectures Harari taught...",
@@ -141,7 +141,7 @@ const titulos = [
   },
   {
     author: "Dan Brown",
-    color: "#98c1d9",
+    color: "#9fa8da",
     colorFont: "black",
     comment: "More of the same.",
     description: "Inferno is a 2013 mystery thriller novel by American author Dan Brown and the fourth book in his Robert Langdon series, following Angels & Demons...",
@@ -154,5 +154,3 @@ const titulos = [
     title: "Inferno",
   }
 ];
-
-export default titulos;

@@ -8,13 +8,13 @@ const preStyle = {
     "https://www.transparenttextures.com/patterns/light-sketch.png"
   ],
   colors: [
-    "#3d5a80",
-    "#ef476f",
-    "#98c1d9",
-    "#ee6c4d",
-    "#293241",
-    "#ffd166",
-    "#06d6a0"
+    "#3f51b5",
+    "#5c6bc0",
+    "#7986cb",
+    "#9fa8da",
+    "#c5cae9",
+    "#283593",
+    "#1a237e"
   ],
   fontColors: ["white", "white", "black", "black", "white", "black", "black"]
 };

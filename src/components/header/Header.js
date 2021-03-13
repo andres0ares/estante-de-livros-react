@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Book from '../Book';
-import booksobj from '../../booksobj';
 import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
@@ -38,14 +37,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Header() {
+export default function Header(props) {
 
-    const [books, setBooks] = useState(booksobj);
+    const [books, setBooks] = useState(props.books);
     const classes = useStyles();
-
-    function openBook(id) {
-        console.log(id);
-    }
 
     return (
         <div>
@@ -69,7 +64,6 @@ export default function Header() {
                         {books.map((titulo, index) => (
                         <Book
                             key={titulo.id}
-                            openBook={openBook}
                             index={index}
                             book={titulo}
                         />

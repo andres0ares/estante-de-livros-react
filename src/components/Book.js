@@ -1,8 +1,7 @@
 import React from "react";
-import preStyle from "./preStyle";
 import { makeStyles } from "@material-ui/core/styles";
 
-function Book(props) {
+export default function Book(props) {
 
   const useStyles = makeStyles((theme) => ({
     bookSpine: {
@@ -28,15 +27,13 @@ function Book(props) {
   }));
 
   const classes = useStyles();
+  const title = (props.book.title.length) > 11 ? `${props.book.title.substring(0,11)}...`  : props.book.title;
 
   return (
     <div
-      onClick={() => props.openBook(props.book)}
       className={classes.bookSpine}
     >
-      <span className={classes.bookSpineText}>{props.book.title}</span>
+      <span className={classes.bookSpineText}>{title}</span>
     </div>
   );
 }
-
-export default Book;

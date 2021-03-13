@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import titulos from "../booksobj";
 import Bookdetail from "./Bookdetail";
 import AddBook from "./AddBook/AddBook";
 import Grid from "@material-ui/core/Grid";
@@ -8,6 +7,7 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import BookThumb from './BookThumb';
 import Pagination from '@material-ui/lab/Pagination';
+//import { titulos } from "../booksobj.js";   
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,12 +45,12 @@ function displayBook(titulos) {
   return newArrayBooks;
 }
 
-function Library() {
+function Library(props) {
 
   const classes = useStyles();
 
   const [page, setPage] = useState(1);
-  const [books, setBooks] = useState(displayBook(titulos));
+  const [books, setBooks] = useState(displayBook(props.books));
   const [book, setBook] = useState({});
   const [clicked, setClicked] = useState(false);
 
