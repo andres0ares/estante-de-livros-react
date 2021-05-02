@@ -55,7 +55,7 @@ export default function Header(props) {
                                 <GitHubIcon />
                             </Fab>
                         </a>
-                        <a href="https://github.com/andres0ares/estante-de-livros-react" target="_blank">
+                        <a href="https://codesandbox.io/s/stupefied-mahavira-u5xhu" target="_blank">
                         <Fab className={classes.icons} size="small" aria-label="Code SandBox">
                             <EditIcon />
                         </Fab>
