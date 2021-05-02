@@ -43,11 +43,11 @@ const useStyle = makeStyles((theme) => ({
 
 export default function Destaque(props) {
     const classes = useStyle();
-    const book = props.books[1];
+    const book = props.books.find(book => book.title == 'Between the World and Me')
 
     return (
         <Grid className={classes.root} container alignItems="center">
-            <Grid item xs={0} md={2}></Grid>
+            <Grid item xs={false} md={2}></Grid>
             <Grid item xs={12} md={4}>
                 <div>
                     <h1 className={classes.title}>{book.title}</h1>
@@ -62,7 +62,7 @@ export default function Destaque(props) {
                     </Paper>
                 </Paper>
             </Grid>
-            <Grid item xs={0} md={2} />
+            <Grid item xs={false} md={2} />
             
         </Grid>        
     )

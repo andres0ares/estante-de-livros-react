@@ -4,10 +4,10 @@ import Library from "./components/library";
 import Header from "./components/header/Header";
 import Destaque from "./components/Destaque/Destaque";
 import Footer from "./components/Footer/Footer";
-import { titulos } from "./booksobj.js";   
+import { titulos } from "./utils/booksobj.js";    
 
 
-
+ 
 export default function App() {
 
   const books = titulos;

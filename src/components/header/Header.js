@@ -48,17 +48,18 @@ export default function Header(props) {
                 <Grid item xs></Grid> 
                 <Grid item xs={12} sm={4}> 
                     <h1 className={classes.title}>Personal Library</h1>
-                    <h3 className={classes.secondTitle}>Developed using React, by <a href="https://github.com/andres0ares" target="_blank">André Soares</a></h3> 
+                    <h3 className={classes.secondTitle}>Developed using React, by <a href="https://oandre.com" target="_blank">André Soares</a></h3> 
                     <div>
-                        <Fab className={classes.icons} size="small" aria-label="GitHub">
-                            <GitHubIcon />
-                        </Fab>
+                        <a href="https://github.com/andres0ares/estante-de-livros-react" target="_blank">
+                            <Fab className={classes.icons} size="small" aria-label="GitHub">
+                                <GitHubIcon />
+                            </Fab>
+                        </a>
+                        <a href="https://github.com/andres0ares/estante-de-livros-react" target="_blank">
                         <Fab className={classes.icons} size="small" aria-label="Code SandBox">
                             <EditIcon />
                         </Fab>
-                        <Fab className={classes.icons} size="small" aria-label="Instagram">
-                            <InstagramIcon />
-                        </Fab>
+                        </a>
                     </div>                  
                     <div className={classes.books} >
                         {books.map((titulo, index) => (

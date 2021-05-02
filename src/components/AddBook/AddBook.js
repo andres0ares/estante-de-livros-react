@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import IconButton from "@material-ui/core/IconButton";
-import CardHeader from "@material-ui/core/CardHeader";
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import BookForm from './BookForm';  
-import SugestionForm from "./SugestionForm";
-import CompareArrowsIcon from '@material-ui/icons/CompareArrows'; 
+import React, { useState } from "react"
+import { makeStyles } from "@material-ui/core/styles"
+import Paper from "@material-ui/core/Paper"
+import IconButton from "@material-ui/core/IconButton"
+import CardHeader from "@material-ui/core/CardHeader"
+import BookForm from './BookForm'
+import SugestionForm from "./SugestionForm"
+import CompareArrowsIcon from '@material-ui/icons/CompareArrows'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: "400px",
-    float: "left"
+    float: "left",
+    margin: '20px'
   },
   close: {
     display: "absolute",
@@ -27,9 +27,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '20px 15px 20px 15px'
   }
 }));
-
-//props.sendBook
-//props.close
 
 export default function AddBook(props) {
 

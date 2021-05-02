@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
-import EditIcon from '@material-ui/icons/Edit';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
@@ -31,25 +31,32 @@ export default function Footer() {
 
     return (
         <Grid className={classes.root} container alignItems="center">
-            <Grid item xs={0} md={2}></Grid>
+            <Grid item xs={false} md={2}></Grid>
             <Grid item xs={12} md={4}>
-                <Fab className={classes.icons} size="small" aria-label="GitHub">
-                    <GitHubIcon />
-                </Fab>
-                <Fab className={classes.icons} size="small" aria-label="Code SandBox">
-                    <EditIcon />
-                </Fab>
-                <Fab className={classes.icons} size="small" aria-label="Instagram">
-                    <InstagramIcon />
-                </Fab>  
+                <a href="https://github.com/andres0ares" target="_blank">
+                    <Fab className={classes.icons} size="small" aria-label="GitHub">
+                        <GitHubIcon />
+                    </Fab>
+                </a>
+                <a href="https://instagram.com/andresoares28" target="_blank">
+                    <Fab className={classes.icons} size="small" aria-label="Instagram">
+                        <InstagramIcon />
+                    </Fab>  
+                </a>
+                <a href="https://linkedin.com/in/andresoares28" target="_blank">
+                    <Fab className={classes.icons} size="small" aria-label="Code SandBox">
+                        <LinkedInIcon />
+                    </Fab>
+                </a>
             </Grid>
             <Grid item className={classes.pd} xs={12} md={4}>
                 <p className={classes.paragraph}>André Soares</p>
-                <p className={classes.paragraph}>/oandre.com</p>
+                <a href="https://oandre.com">
+                    <p className={classes.paragraph}>/oandre.com</p></a>
                 <p className={classes.paragraph}>andre.soares2@academico.ufpb.br</p>
-                <p className={classes.paragraph}>Mais projetos em...</p>
+                <p className={classes.paragraph}>2021</p>
             </Grid>
-            <Grid item xs={0} md={2}></Grid>
+            <Grid item xs={false} md={2}></Grid>
         </Grid>  
     )
 }
