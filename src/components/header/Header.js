@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header(props) {
 
-    const [books, setBooks] = useState(props.books);
+    const [books, setBooks] = useState(props.books.slice(0, 11));
     const classes = useStyles();
 
     return (
